@@ -97,6 +97,7 @@ let latePaymentMessage =
     " is now sad!";
 
 // SEPT 25
+
 let horseOne = {
     name: "Justin",
     nickname: "LongMan",
@@ -130,7 +131,11 @@ let horseThree = {
     fatigue: 40,
 };
 
-let horses = [horseOne, horseTwo, horseThree];
+let horses = {
+    horseOne: horseOne,
+    horseTwo: horseTwo,
+    horseThree: horseThree,
+};
 
 let horseFour = {
     name: "Clover",
@@ -143,12 +148,9 @@ let horseFour = {
     fatigue: 55,
 };
 
-horses.push(horseFour);
+horses.horseFour = horseFour;
 
-horses[0].hungry = true;
-horses[1].hungry = true;
-horses[2].hungry = true;
-horses[3].hungry = true;
-horses.forEach((x) => {
-    console.log(x);
-});
+horses.horseOne.isHungry = true;
+horses.horseTwo.isHungry = true;
+horses.horseThree.isHungry = true;
+horses.horseFour.isHungry = true;
