@@ -87,35 +87,14 @@ let horseName = "Nancy";
 let horseAge = 8;
 let horseIsInStable = false;
 let monthlyBoardingCost = 100;
-let lateFee = monthlyBoardingCost + monthlyBoardingCost * 1.2;
+let lateFee = monthlyBoardingCost * 0.2;
 let visitorMessage = "Hello! Welcome to my stable!";
 let latePaymentMessage =
     "Your monthly payment is late! You owe $" +
-    lateFee +
+    (lateFee + monthlyBoardingCost) +
     ". " +
     horseName +
     " is now sad!";
-
-// Console logs
-console.log("Horse Name:", horseName);
-console.log("Horse Age:", horseAge);
-console.log("Is " + horseName + " in the stable?", horseIsInStable);
-console.log("Monthly Boarding Cost: $" + monthlyBoardingCost);
-console.log("Late Fee: $" + lateFee);
-console.log("Visitor Message:", visitorMessage);
-console.log("Late Payment Message:", latePaymentMessage);
-
-// Bonus: playful logs
-console.log(horseName + " is " + horseAge + " years old.");
-console.log(
-    "Is " +
-        horseName +
-        " currently in the stable? " +
-        (horseIsInStable ? "Yes" : "No")
-);
-console.log("If payment is late, total due is $" + lateFee);
-console.log("Stable says:", visitorMessage);
-console.log("System alert:", latePaymentMessage);
 
 // SEPT 25
 let horseOne = {
