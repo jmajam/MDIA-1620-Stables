@@ -154,3 +154,17 @@ horses.horseOne.isHungry = true;
 horses.horseTwo.isHungry = true;
 horses.horseThree.isHungry = true;
 horses.horseFour.isHungry = true;
+
+//notes
+//function declaration
+//first,second are parameters
+// function addTwo(first, second) {
+//     console,log(first + second)
+// }
+// when calling the function, the things inputted are called arguments
+//addTwo(1,2)
+// let testFirst = 1;
+// let testSecond = 2;
+//using variables as arguments is allowed
+//addTwo(testFirst,testSecond)
+//console.log(horses);
