@@ -176,14 +176,14 @@ function printStallsAvailableStatement(stallCount, horsesInStable) {
     );
 }
 
-function printLateFeeStatement(horse, rent, lateFee) {
-    let total = rent + lateFee;
-    console.log(horse.name + "'s fee is late! You now owe $" + total);
+function printLateFeeStatement(horse) {
+    let total = horse.monthlyRent + horse.monthlyRent * 0.2;
+    console.log(horse.name + "'s fee is late! You now owe $" + total + ".");
 }
 
 function getHorseNickname(horse) {
     return horse.nickname;
 }
 printStallsAvailableStatement(5, 2);
-printLateFeeStatement(horseTwo, monthlyBoardingCost, lateFee);
+printLateFeeStatement(horseTwo);
 console.log(getHorseNickname(horseOne));
