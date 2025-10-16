@@ -187,17 +187,3 @@ function getHorseNickname(horse) {
 printStallsAvailableStatement(5, 2);
 printLateFeeStatement(horseTwo, monthlyBoardingCost, lateFee);
 console.log(getHorseNickname(horseOne));
-
-//notes
-//function declaration
-//first,second are parameters
-// function addTwo(first, second) {
-//     console,log(first + second)
-// }
-// when calling the function, the things inputted are called arguments
-//addTwo(1,2)
-// let testFirst = 1;
-// let testSecond = 2;
-//using variables as arguments is allowed
-//addTwo(testFirst,testSecond)
-//console.log(horses);
