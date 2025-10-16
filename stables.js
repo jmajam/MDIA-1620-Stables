@@ -201,16 +201,3 @@ console.log(getHorseNickname(horseOne));
 //using variables as arguments is allowed
 //addTwo(testFirst,testSecond)
 //console.log(horses);
-
-let numberCubed = 5 * 5 * 5;
-let numberCubed2 = 2 * 2 * 2;
-let numberCubed3 = 4 * 4 * 4;
-
-function cubed(num) {
-    return num * num * num;
-}
-
-console.log(numberCubed);
-console.log(numberCubed2);
-
-console.log(cubed(1232434));
