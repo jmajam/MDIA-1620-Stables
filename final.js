@@ -126,3 +126,11 @@
 //------------------------- Bonus -------------------------//
 
 // Replace the ascii art at the top of the file with art representing your stable.
+
+let horses = [];
+
+let welcomeMessage = "Welcome to Justin Farms!";
+
+let latePaymentFee = 100;
+
+let stallsAvailable = 4;
