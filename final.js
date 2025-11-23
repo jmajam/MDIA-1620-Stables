@@ -1,47 +1,12 @@
 // Welcome!
-//
-//                                                  #    #
-//                                             %%% ##   ##
-//                                          %%%%% ###%🎀###
-//                                         %%%%% ### %%% #
-//                                       %%%%%% ### %%% ###
-//                                        %%%% ## %% #######
-//                                       %%%%% # %% #@#####
-//                                     %%%%%% # % #########
-//                                    %%%%% ##### #########
-//                          ###        %% ####### #########
-//                 %%% ############    ########### ########
-//              %%%% ############################### #######
-//            %%%%% ################################## ######
-//          %%%%%% #################################### #C###
-//         %%%🌸%% #####################################  ###
-//         %%%%% #######################################
-//        %%%%%% ############### BEANS ##################
-//     % %%%%%%% ############### BEANS ##################
-//      %%%%%%%%% ############## BEANS ##################
-//     %%%%%%%%%% ########################################
-//  %%% %%%%%%%%   ###### ################################
-//    %%%%%%%%      ###### #################### ##########
-// % %%%🌸%%%%        ####### ########### ###### ##########
-//  %%%%%%%%%         #######  ########### ###### ########
-// %%%%%%%%%%          ##### ###  ######### ####### ######
-//  %%%%%%%%%%          #### ##               ####### ####
-//  %🌸%%%%%%%%%           ## #                  ##### ###
-//   %%  %% % %%         # ##                      ## ###
-//     %   %    %        # ###                      # ###
-//                        # ###                     ## ###
-//                        # ###                     ## ###
-//                        # ####                   #### ##
-//                       ### ###                  ##### ###
-//                      ####  ###                 ####   ##
-//                     #####   ###                 ##    ##
-//                    #####    ####                      ###
-//                     ##        ###                     ###
-//                                ####                     ##
-//                                 ####                    ###
-//                                                         ####
-//                                                          ##
-//
+//        ||||||||||
+//       ||        ||
+//      ||  STABLE  ||
+//     ||            ||
+//    ||              ||
+//   ||                ||
+//  ||                  ||
+// ||||||||||||||||||||||||
 // This is a template for the final project. You'll be setting up a stable and making
 // sure it runs smoothly.
 //
@@ -141,7 +106,7 @@ let Horse = function (
     favouriteTreat,
     age,
     monthlyRent,
-    location,
+    isInside,
     speed,
     fatigue
 ) {
@@ -150,7 +115,7 @@ let Horse = function (
     this.favouriteTreat = favouriteTreat;
     this.age = age;
     this.monthlyRent = monthlyRent;
-    this.location = location;
+    this.isInside = isInside;
     this.speed = speed;
     this.fatigue = fatigue;
 
@@ -164,19 +129,16 @@ let Horse = function (
             ", and likes " +
             this.favouriteTreat +
             ".";
-
         console.log(message);
     };
 
-    this.setLocation = function () {
-        this.location = !this.location;
+    this.setSpeed = function (newSpeed) {
+        this.speed = newSpeed;
     };
 };
 
 const horse1 = new Horse("Thunder", "Thundy", "Carrots", 5, 500, true, 45, 10);
-
 const horse2 = new Horse("Bella", "Bell", "Apples", 7, 600, false, 40, 15);
-
 const horse3 = new Horse("Shadow", "Shady", "Sugar Cubes", 4, 450, true, 50, 8);
 
 horses.push(horse1);
@@ -189,7 +151,7 @@ const horseLiteral = {
     favouriteTreat: "Carrots",
     age: 6,
     monthlyRent: 550,
-    location: true, // boolean
+    isInside: true,
     speed: 42,
     fatigue: 12,
     introduction: function () {
@@ -203,8 +165,8 @@ const horseLiteral = {
             ".";
         console.log(message);
     },
-    setLocation: function () {
-        this.location = !this.location;
+    setSpeed: function (newSpeed) {
+        this.speed = newSpeed;
     },
 };
 
@@ -230,7 +192,7 @@ function costIfRentLate(horse, lateFee) {
     console.log("Late! you owe: $" + total + ".");
 }
 
-costIfRentLate(horses[0], lateFee);
+costIfRentLate(horses[0], latePaymentFee);
 
 for (let i = 0; i < horses.length; i++) {
     let currentHorse = horses[i];
@@ -246,3 +208,62 @@ function getHorseNickname(horse) {
 }
 
 console.log(getHorseNickname(horses[1]));
+
+function showHorseSpeedDemo(horse) {
+    console.log(
+        "Look how fast " +
+            horse.name +
+            " runs 1000m with a speed of: " +
+            horse.speed +
+            "."
+    );
+    let seconds = 0;
+    for (let i = 1000; i > 0; i -= horse.speed) {
+        console.log(i + "m from end!");
+        seconds += 1;
+    }
+    console.log(
+        "Wow! " + horse.name + " ran 1000m in " + seconds + " seconds!"
+    );
+}
+
+function updateHorsesLocation(stable, isBedTime) {
+    for (let i = 0; i < stable.length; i++) {
+        let currentHorse = stable[i];
+        if (currentHorse.isInside && !isBedTime) {
+            currentHorse.isInside = false;
+            console.log(
+                currentHorse.name + " has been moved outside to sunbathe!"
+            );
+        }
+
+        if (!currentHorse.isInside && isBedTime) {
+            currentHorse.isInside = true;
+            console.log(currentHorse.name + " has been moved inside to sleep!");
+        }
+    }
+}
+
+updateHorsesLocation(horses);
+
+for (let i = 0; i < horses.length; i++) {
+    let currentHorse = horses[i];
+
+    currentHorse.flipLocation = function () {
+        this.isInside = !this.isInside;
+    };
+}
+
+function feedHorses(stable) {
+    for (let i = 0; i < stable.length; i++) {
+        let currentHorse = stable[i];
+        if (!currentHorse.isInside) {
+            currentHorse.flipLocation();
+        }
+
+        console.log(currentHorse.name + " has been fed!");
+    }
+}
+
+feedHorses(horses);
+updateHorsesLocation(horses, true);
