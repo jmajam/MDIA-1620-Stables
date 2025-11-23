@@ -134,3 +134,85 @@ let welcomeMessage = "Welcome to Justin Farms!";
 let latePaymentFee = 100;
 
 let stallsAvailable = 4;
+
+let Horse = function (
+    name,
+    nickname,
+    favouriteTreat,
+    age,
+    monthlyRent,
+    location,
+    speed,
+    fatigue
+) {
+    this.name = name;
+    this.nickname = nickname;
+    this.favouriteTreat = favouriteTreat;
+    this.age = age;
+    this.monthlyRent = monthlyRent;
+    this.location = location;
+    this.speed = speed;
+    this.fatigue = fatigue;
+
+    //methods
+    this.introduction = function () {
+        let message =
+            "This horse is named: " +
+            this.name +
+            " it is " +
+            this.age +
+            ", and likes " +
+            this.favouriteTreat +
+            ".";
+
+        console.log(message);
+    };
+
+    this.setLocation = function () {
+        this.location = !this.location;
+    };
+};
+
+const horse1 = new Horse("Thunder", "Thundy", "Carrots", 5, 500, true, 45, 10);
+
+const horse2 = new Horse("Bella", "Bell", "Apples", 7, 600, false, 40, 15);
+
+const horse3 = new Horse("Shadow", "Shady", "Sugar Cubes", 4, 450, true, 50, 8);
+
+horses.push(horse1);
+horses.push(horse2);
+horses.push(horse3);
+
+const horseLiteral = {
+    name: "Storm",
+    nickname: "Stormy",
+    favouriteTreat: "Carrots",
+    age: 6,
+    monthlyRent: 550,
+    location: true, // boolean
+    speed: 42,
+    fatigue: 12,
+    introduction: function () {
+        let message =
+            "This horse is named: " +
+            this.name +
+            " it is " +
+            this.age +
+            ", and likes " +
+            this.favouriteTreat +
+            ".";
+        console.log(message);
+    },
+    setLocation: function () {
+        this.location = !this.location;
+    },
+};
+
+horses.push(horseLiteral);
+
+for (let i = 0; i < horses.length; i++) {
+    horses[i].isHungry = false;
+}
+
+// Stable roster snapshot
+// console.log(horses);
