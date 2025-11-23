@@ -216,3 +216,33 @@ for (let i = 0; i < horses.length; i++) {
 
 // Stable roster snapshot
 // console.log(horses);
+
+stallsAvailable -= horses.length;
+
+if (stallsAvailable < 2) {
+    console.log("We need to build more stalls");
+} else {
+    console.log("We have " + stallsAvailable + " available!");
+}
+
+function costIfRentLate(horse, lateFee) {
+    let total = horse.monthlyRent + lateFee;
+    console.log("Late! you owe: $" + total + ".");
+}
+
+costIfRentLate(horses[0], lateFee);
+
+for (let i = 0; i < horses.length; i++) {
+    let currentHorse = horses[i];
+    if (currentHorse.favouriteTreat === "Apples") {
+        break;
+    } else {
+        console.log(currentHorse.name + ": *Neighs angrily*");
+    }
+}
+
+function getHorseNickname(horse) {
+    return horse.nickname;
+}
+
+console.log(getHorseNickname(horses[1]));
