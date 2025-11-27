@@ -434,7 +434,7 @@ function updateHorsesLocation(stable, isBedTime) {
     }
 }
 
-updateHorsesLocation(horses);
+updateHorsesLocation(horses, false);
 
 for (let i = 0; i < horses.length; i++) {
     let currentHorse = horses[i];
