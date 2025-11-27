@@ -327,15 +327,15 @@ let Horse = function (
     };
 };
 
-const horse1 = new Horse("Thunder", "Thundy", "Carrots", 5, 500, true, 45, 10);
-const horse2 = new Horse("Bella", "Bell", "Apples", 7, 600, false, 40, 15);
-const horse3 = new Horse("Shadow", "Shady", "Sugar Cubes", 4, 450, true, 50, 8);
+let horse1 = new Horse("Thunder", "Thundy", "Carrots", 5, 500, true, 45, 10);
+let horse2 = new Horse("Bella", "Bell", "Apples", 7, 600, false, 40, 15);
+let horse3 = new Horse("Shadow", "Shady", "Sugar Cubes", 4, 450, true, 50, 8);
 
 horses.push(horse1);
 horses.push(horse2);
 horses.push(horse3);
 
-const horseLiteral = {
+let horseLiteral = {
     name: "Storm",
     nickname: "Stormy",
     favouriteTreat: "Carrots",
@@ -416,6 +416,8 @@ function showHorseSpeedDemo(horse) {
         "Wow! " + horse.name + " ran 1000m in " + seconds + " seconds!"
     );
 }
+
+showHorseSpeedDemo(horses[2]);
 
 function updateHorsesLocation(stable, isBedTime) {
     for (let i = 0; i < stable.length; i++) {
