@@ -176,7 +176,7 @@ for (let i = 0; i < horses.length; i++) {
     horses[i].isHungry = false;
 }
 
-// Stable roster snapshot
+// Stable roster snapshot data structure
 // [
 //   Horse {
 //     name: 'Thunder',
