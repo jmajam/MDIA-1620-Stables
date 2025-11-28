@@ -177,7 +177,60 @@ for (let i = 0; i < horses.length; i++) {
 }
 
 // Stable roster snapshot
-// console.log(horses);
+// [
+//   Horse {
+//     name: 'Thunder',
+//     nickname: 'Thundy',
+//     favouriteTreat: 'Carrots',
+//     age: 5,
+//     monthlyRent: 500,
+//     isInside: true,
+//     speed: 45,
+//     fatigue: 10,
+//     introduction: [Function (anonymous)],
+//     setSpeed: [Function (anonymous)],
+//     isHungry: false
+//   },
+//   Horse {
+//     name: 'Bella',
+//     nickname: 'Bell',
+//     favouriteTreat: 'Apples',
+//     age: 7,
+//     monthlyRent: 600,
+//     isInside: false,
+//     speed: 40,
+//     fatigue: 15,
+//     introduction: [Function (anonymous)],
+//     setSpeed: [Function (anonymous)],
+//     isHungry: false
+//   },
+//   Horse {
+//     name: 'Shadow',
+//     nickname: 'Shady',
+//     favouriteTreat: 'Sugar Cubes',
+//     age: 4,
+//     monthlyRent: 450,
+//     isInside: true,
+//     speed: 50,
+//     fatigue: 8,
+//     introduction: [Function (anonymous)],
+//     setSpeed: [Function (anonymous)],
+//     isHungry: false
+//   },
+//   {
+//     name: 'Storm',
+//     nickname: 'Stormy',
+//     favouriteTreat: 'Carrots',
+//     age: 6,
+//     monthlyRent: 550,
+//     isInside: true,
+//     speed: 42,
+//     fatigue: 12,
+//     introduction: [Function: introduction],
+//     setSpeed: [Function: setSpeed],
+//     isHungry: false
+//   }
+// ]
 
 stallsAvailable -= horses.length;
 
